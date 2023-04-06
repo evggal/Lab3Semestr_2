@@ -165,6 +165,10 @@ public:
     {
         cout << " --- stop programm --- ";
     }
+    void New_model(int model)
+    {
+        this->model = model;
+    }
     void GetProcessor()
     {
         cout << " @ processor " << processor << endl;
@@ -214,11 +218,15 @@ public:
     }
     void Connect_Arduino()
     {
-        cout << " --- Connect Arduino --- ";
+        cout << " --- Connect Arduino --- \n";
     }
     void DisConnect_Arduino()
     {
-        cout << " --- Disconnect Arduino --- ";
+        cout << " --- Disconnect Arduino --- \n";
+    }
+    void New_model(int model)
+    {
+        this->model = model;
     }
     void GetLength()
     {
@@ -242,9 +250,21 @@ public:
 
 int main()
 {
-    Oscilloscope comp;
+    Computer comp;
     comp.activate();
     comp.action();
+    comp.Status();
+    comp.New_model(5);
     comp.GetModel();
+    comp.programm();
+    comp.video::action();
+    comp.GetQuality();
+    comp.qualityHigh();
+    comp.GetQuality();
+    comp.audio::action();
+    comp.GetVolue();
+    comp.volueHigh();
+    comp.GetVolue();
+    comp.STOP_programm();
     comp.Status();
 }
